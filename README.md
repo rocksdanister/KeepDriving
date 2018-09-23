@@ -1,12 +1,14 @@
 <p align="center">
-  <img width="1024" height="500" src="https://i.imgur.com/xa1yflC.png">
+  <img width="1024" height="324" src="https://i.imgur.com/nrvdHgA.png">
 </p>
 
 # KeepDriving 
-2D Android Infinite Scroller Game in Unity
+![GitHub release](https://img.shields.io/github/release/rocksdanister/KeepDriving.svg)](https://github.com/rocksdanister/KeepDriving/releases)
+
 
 ## About
 [![Trailer](https://i.imgur.com/SpvCOsW.png)](https://youtu.be/NnTo1cddtJ0 "demo")
+2D Android Infinite Scroller Game in Unity
 
 
 ## Playstore Link
