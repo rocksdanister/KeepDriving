@@ -1,7 +1,7 @@
 # About
 ![GitHub release](https://github.com/rocksdanister/KeepDriving/releases)
 <p align="center">
-  <img width="300" height="124" src="https://i.imgur.com/nrvdHgA.png">
+  <img width="900" height="100" src="https://i.imgur.com/nrvdHgA.png">
 </p>
 A simple 2D Android Infinite Scroller Game in Unity.
 
