@@ -11,7 +11,7 @@ A simple 2D Android Infinite Scroller Game in Unity.
 - Android SDK & JDK
 
 ## Playstore Link
-[![Keep Driving](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.Rocksdanister.KeepDriving)
+[![Keep Driving](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png =250x250)](https://play.google.com/store/apps/details?id=com.Rocksdanister.KeepDriving)
 
 ## What's Different From Playstore Version?
 Not Included:
