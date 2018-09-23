@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1857972601639624}
+  m_IsPrefabAsset: 1
+--- !u!1 &1857972601639624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4308717450061452}
+  - component: {fileID: 114529863043252016}
+  m_Layer: 0
+  m_Name: Track
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4308717450061452
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857972601639624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114529863043252016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857972601639624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e166976d7ff1848b5ff640eb150fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  debug_1: 13
+  debug_2: 0
+  currentTrack: 0
+  currentTrack2: 0
+  mTravelTime: 2
+  trackData:
+  - seq: 01000000020000000300000004000000
+    ttype: nil
+    obj: {fileID: 1356753632515480, guid: ab3651a61dd13e74ca44a556a7221c84, type: 2}
+  - seq: 050000000600000007000000
+    ttype: nil
+    obj: {fileID: 1682472849437718, guid: 72e74b747eea5084cab405a72e2b86a6, type: 2}
+  - seq: 0800000009000000
+    ttype: nil
+    obj: {fileID: 1387038011231062, guid: c861aa176a9e02848b00399e99536f39, type: 2}
+  - seq: 00000000
+    ttype: nil
+    obj: {fileID: 1912573292002916, guid: 80e3d5b64a622ee42bbafa2f106c71fb, type: 2}
+  - seq: 0a000000
+    ttype: nil
+    obj: {fileID: 1119782159290662, guid: 4530a882311c1d543a8326fb43349f72, type: 2}
+  - seq: 0b000000
+    ttype: nil
+    obj: {fileID: 1134395129589564, guid: 080fca1c558b3884a83cdc09289311f8, type: 2}
+  - seq: 0c000000
+    ttype: nil
+    obj: {fileID: 1302181475529632, guid: c5fca893d4a208248ad6a3d026a76746, type: 2}
+  - seq: 00000000
+    ttype: nil
+    obj: {fileID: 1623341526375516, guid: ebe460ae73b5b774fae9ad0f2bec1a91, type: 2}
+  - seq: 0d000000
+    ttype: nil
+    obj: {fileID: 1179961729066088, guid: 444e53b4651a6c8488388d0c45a23acb, type: 2}
+  - seq: 00000000
+    ttype: nil
+    obj: {fileID: 1703620352791490, guid: 1c724971190a1ce40aa7ec6080c5165a, type: 2}
+  - seq: 01000000
+    ttype: nil
+    obj: {fileID: 1533004156314264, guid: 4a716fdb3d63497489089497b89f2373, type: 2}
+  - seq: 04000000
+    ttype: nil
+    obj: {fileID: 1446234468225626, guid: b352560bbbfa3b4459a72edf161976f7, type: 2}
+  - seq: 02000000
+    ttype: nil
+    obj: {fileID: 1917152624681274, guid: 36131e37e0738aa478f5b6b9f50bb923, type: 2}
+  - seq: 00000000
+    ttype: nil
+    obj: {fileID: 1681235608121398, guid: 39edb26e99b7f5849b9ae1c285cbaacc, type: 2}

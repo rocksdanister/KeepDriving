@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1440026957878030}
+  m_IsPrefabAsset: 1
+--- !u!1 &1440026957878030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4179444975437734}
+  - component: {fileID: 114020965693531764}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4179444975437734
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440026957878030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114020965693531764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440026957878030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12d845740acaf941b4952c5af183752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disable_collission: 0
+  spawnValues: {x: 2.5, y: 15, z: 0}
+  enemyCars:
+  - {fileID: 1920304528692272, guid: ffc6b6139ab5d16409191a18a1f09b45, type: 2}
+  - {fileID: 1380093585749668, guid: 654fcd03195ed0d4e9c91755351610f8, type: 2}
+  - {fileID: 1426054533766614, guid: 79dc759ee8d68b641a3f558f9dce244e, type: 2}
+  startWait: 1
+  waveWait: 1
+  spawnWait: 0.5
+  spawnWait2: 0.7
+  enemyCount: 50
+  enemyCount2: 25
+  state_Restarting: 0
+  userSettings:
+    soundVol: 100
+    benchmarkDone: 0
+    avgFPS: -1
+    highScore1: 0
+    highScore2: 0
+    highScore3: 0
+  loadData:
+    soundVol: 100
+    benchmarkDone: 0
+    avgFPS: -1
+    highScore1: 0
+    highScore2: 0
+    highScore3: 0
+  benchmarkNow: 0
+  gameRun: 1
+  currentTimeState: 0
+  secondsInFullDay: 80
+  ambientLight: {fileID: 0}
+  cycle:
+  - {r: 1, g: 1, b: 1, a: 0.784}
+  - {r: 1, g: 0.72156864, b: 0.48235294, a: 0.5882353}
+  - {r: 0.0588, g: 0.0588, b: 0.0588, a: 1}
+  - {r: 1, g: 0.72156864, b: 0.48235294, a: 0.7058824}
+  rateAtColorChange: 40
+  midwayNighttoMorning: 0

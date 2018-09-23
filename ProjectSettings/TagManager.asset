@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - track
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - player
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - left
+  - right
+  - enemy
+  - debug1
+  - corner
+  - corner2
+  - dirt
+  - lgrass
+  - rgrass
+  - 100
+  - 101
+  - leftside
+  - rightside
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Road
+  - BG1
+  - Touch Input
+  - Halo
+  - LightSources
+  - LightObstacles
+  - AmbientLight
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: B1
+    uniqueID: 2878922003
+    locked: 0
+  - name: R1
+    uniqueID: 1524564351
+    locked: 0
+  - name: Player
+    uniqueID: 1100149807
+    locked: 0
+  - name: Halo
+    uniqueID: 1560074123
+    locked: 0
