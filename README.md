@@ -1,7 +1,7 @@
 # Keep Driving - 2D Android Game
 [![GitHub release](https://img.shields.io/github/release/rocksdanister/keepdriving.svg)](https://github.com/rocksdanister/KeepDriving/releases)
 
-[![Trailer](https://i.imgur.com/SpvCOsW.png)](https://youtu.be/NnTo1cddtJ0 "demo")
+[![Trailer](https://i.imgur.com/J0NFaaT.png)](https://youtu.be/NnTo1cddtJ0 "demo")
 A simple 2D Android Infinite Scroller Game made with Unity.
 
 ## Requirements
