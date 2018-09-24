@@ -13,7 +13,7 @@ public class QualityMenuControl : MonoBehaviour {
 
     private void Start()
     {
-        Debug.Log(GameController.gameController.userSettings.soundVol);
+        
         if (GameController.gameController.userSettings.fps_on == true)
         {
             fps.GetComponent<Toggle>().isOn = true;

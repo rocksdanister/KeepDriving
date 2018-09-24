@@ -21,8 +21,7 @@ public class RestartButon : MonoBehaviour {
     void TaskOnClick()
     {
         sceneController.RestartScene();
-        //Output this to console when the Button is clicked
-       // GameController.gameController.RestartLvl();
+
     }
 	
 	// Update is called once per frame

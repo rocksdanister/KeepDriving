@@ -6,8 +6,6 @@ using UnityEngine;
 public class TrackScript : MonoBehaviour {
 
     public BGscroll bgScroll;
-    //public static TrackScript trackScript;
-    //public float speed;
     public int debug = 0;
     public int debug_1 = 0;
     public int debug_2 = 0;
@@ -28,23 +26,6 @@ public class TrackScript : MonoBehaviour {
 
     }
     public Track[] trackData;
-
-    /*
-    void Awake()
-    {
-        
-        //.. Singleton design, only one isntance of GameControl
-        if (trackScript == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            trackScript = this;
-        }
-        else if (trackScript != this)
-        {
-            Destroy(gameObject);
-        }
-    }
-    */
 
     private Vector2[] startPosition = new Vector2[50];
     private Vector2 tmp=  new Vector2(0.0f,9.984f);

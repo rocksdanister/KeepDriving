@@ -14,7 +14,6 @@ public class GameController : MonoBehaviour {
    // public int[] scores  = new int[5];
 
 
-    //[HideInInspector] public int adCounter;
     //... Benchmarking & Save Data Variables
     [Serializable]
     public class UserSettings
@@ -63,9 +62,7 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //adCounter = 1;
         userSettings = new UserSettings();
-        //Debug.Log(userSettings.soundVol);
         Load();  // load save data
         //Application.targetFrameRate = 30;
     }
@@ -79,15 +76,12 @@ public class GameController : MonoBehaviour {
         // .. in windows this path is under user/appdata/LocalLow/...
         //Debug.Log(Application.persistentDataPath);
         FileStream file = File.Create(Application.persistentDataPath + "/playerSettings.dat");
-       // Debug.Log(Application.persistentDataPath);
         bf.Serialize(file, userSettings);
         file.Close();
     }
 
     public void Load()
     {
-       // Debug.Log(userSettings.soundVol);
-       // Debug.Log("SCORE LOADED: " + userSettings.highScore1);
         if (File.Exists(Application.persistentDataPath + "/playerSettings.dat"))
             {
                 BinaryFormatter bf = new BinaryFormatter();
@@ -107,7 +101,6 @@ public class GameController : MonoBehaviour {
             if (userSettings.var1 < 10)  //control sensitivity ,before update var1=0 so a fix. now var1 is from 10-100
             {
                 userSettings.var1 = 80;
-              //  Debug.Log(userSettings.var1);
             }
 
             if(userSettings.soundVol <10) // for old users, new range is 100-200. Old was 0-1
@@ -122,20 +115,6 @@ public class GameController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-       /*
-        if (gameRun == true)
-        {
-
-            elapsedTime0 += Time.deltaTime; //score
-            //... Day/night cycle
-            elapsedTime += Time.deltaTime;
-            DayNightCycle();
-
-        }
-
-    */
-        // if (Input.GetKey("escape"))
-        //     Application.Quit();
     }
 
 }

@@ -14,11 +14,9 @@ public class Backbutton : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-           // GameController.gameController.adCounter = 1; //advertisement
             SoundManager.soundManager.StopPlaying();
             SceneManager.LoadScene(0);
-           // GameController.gameController.ResetEverything();
-           // Application.Quit();
+
         }
     }
 }

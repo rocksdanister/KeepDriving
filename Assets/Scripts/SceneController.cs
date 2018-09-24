@@ -254,7 +254,6 @@ public class SceneController : MonoBehaviour {
 
     public void RestartScene()
     {
-        //GameController.gameController.adCounter++; //decide to display advertisement
         SoundManager.soundManager.StopPlaying();
        // SoundManager.soundManager.StartPlaying(0); // Start is calling it already
         SceneManager.LoadScene(1);

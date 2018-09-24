@@ -19,7 +19,6 @@ public class DebugScore : MonoBehaviour {
         if (sceneController.gameRun == true)
         {
             text.enabled = true;
-            // GameController.gameController.elapsedTime0 += Time.deltaTime;
             text.text = "SCORE: " + Mathf.CeilToInt(sceneController.elapsedTime0);
         }
         else
@@ -29,20 +28,4 @@ public class DebugScore : MonoBehaviour {
         
     }
 
-    /*
-    void OnGUI()
-    {
-        int w = Screen.width, h = Screen.height;
-
-        GUIStyle style = new GUIStyle();
-
-        Rect rect = new Rect(0, 0, w, h * 2 / 100);
-        style.alignment = TextAnchor.UpperLeft;
-        style.font = font;
-        style.fontSize = h * 2 / 100;
-        style.normal.textColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        string text = string.Format("Score: {0}", Mathf.CeilToInt(elapsedTime));
-        GUI.Label(rect, text, style);
-    }
-    */
 }

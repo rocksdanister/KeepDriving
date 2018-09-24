@@ -20,7 +20,7 @@ public class LoadingScreenControl : MonoBehaviour {
     {
         StartCoroutine(LoadingScreen());
     }
-	
+	// .. background loading.
     IEnumerator LoadingScreen()
     {
         loadingObj.SetActive(true);

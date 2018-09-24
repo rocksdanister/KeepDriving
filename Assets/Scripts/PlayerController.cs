@@ -53,12 +53,6 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-    /*
-    public void ResetPlayerPos()
-    {
-        transform.position = plStartPos;
-    }
-    */
 
     public void AccelerometerMove()
     {
@@ -102,18 +96,12 @@ public class PlayerController : MonoBehaviour {
         if (i == 0)
         {
             rb.velocity = new Vector2( (tmpSpeed*accel), 0f);
-            //if (tmpRotate <= zRotate)
-            //    tmpRotate++;
-            //rb.rotation = Quaternion.Euler(new Vector3(0f, 0f, tmpRotate));
             rb.rotation = -1*zRotate*accel/1.2f;
            
         }
         else
         {
             rb.velocity = new Vector2(tmpSpeed*accel, 0f);
-            //if (tmpRotate <= zRotate)
-            //   tmpRotate++;
-            // rb.rotation = Quaternion.Euler(new Vector3(0f, 0f, -1*tmpRotate));
             rb.rotation = -1*zRotate*accel/1.2f;
         }
     }
@@ -144,9 +132,6 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
 
-        //  Debug.Log(debug1);
-       // if (GameController.gameController.gameRun == true)
-        //{
         if (debug1 == 1)
            AccelerometerMove();
 
@@ -166,54 +151,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-       // }
-
-        /*
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            // Handle finger movements based on touch phase.
-            switch (touch.phase)
-            {
-                // Record initial touch position.
-                case TouchPhase.Stationary:
-                    // Debug.Log(touch.position);
-                    if (touch.position.x <= 120 && touch.position.y <= 120)
-                    {
-                        rb.velocity = new Vector3(-1*speed, 0f, 0f);
-                        // transform.rotation.z
-                        if(tmpRotate<=zRotate)
-                            tmpRotate++;
-                        //rb.rotation = Quaternion.Euler(new Vector3(0f, 0f, tmpRotate));
-                        rb.rotation = Quaternion.Euler(new Vector3(0f, 0f, zRotate));
-
-                    }
-                    else if (touch.position.x >= 300 && touch.position.y <= 120)
-                    {
-                        rb.velocity = new Vector3(speed, 0f, 0f);
-                        if (tmpRotate <= zRotate)
-                            tmpRotate++;
-                        // rb.rotation = Quaternion.Euler(new Vector3(0f, 0f, -1*tmpRotate));
-                        rb.rotation = Quaternion.Euler(new Vector3(0f, 0f, -1*zRotate));
-                    }
-                    break;
-
-                // Determine direction by comparing the current touch position with the initial one.
-                case TouchPhase.Moved:
-                    //direction = touch.position - startPos;
-                    break;
-
-                // Report that a direction has been chosen when the finger is lifted.
-                case TouchPhase.Ended:
-                    tmpRotate = 0;
-                    rb.velocity = new Vector3(0, 0, 0);
-                    rb.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-                   // Debug.Log(touch.position);
-                    break;
-            }
-        }
-        */
+       
 
     }
 }
