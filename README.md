@@ -14,8 +14,11 @@ A simple 2D Android Infinite Scroller Game made with Unity.
 [![Keep Driving](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.Rocksdanister.KeepDriving)
 
 ## What's Different From Playstore Version?
-Not Included:
+Not Included in the github:
 - Music
 - Font
 - UITextures
+
+## Note
+Start From menu.unity scene onwards, otherwise error will be shown since gamecontroller singleton is initialised on menuscreen.
 
