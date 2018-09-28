@@ -16,6 +16,7 @@ public class TouchInput : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+	 // Not using it, decided to only use accelerometer input.
         /*
         if (Input.touchCount > 0)
         {
