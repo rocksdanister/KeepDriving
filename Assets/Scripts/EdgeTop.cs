@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EdgeTop : MonoBehaviour {
 
+    // not used.....
     private void OnTriggerExit(Collider other)
     {
         //TrackScript.trackScript.ResetVelocity();

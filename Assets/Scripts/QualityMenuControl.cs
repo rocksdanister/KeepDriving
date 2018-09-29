@@ -13,7 +13,7 @@ public class QualityMenuControl : MonoBehaviour {
 
     private void Start()
     {
-        
+        //... settings ui buttons based on default or user saved settings previously.
         if (GameController.gameController.userSettings.fps_on == true)
         {
             fps.GetComponent<Toggle>().isOn = true;
@@ -21,7 +21,7 @@ public class QualityMenuControl : MonoBehaviour {
         else
             fps.GetComponent<Toggle>().isOn = false;
 
-        if (GameController.gameController.userSettings.quality == 1)  //high
+        if (GameController.gameController.userSettings.quality == 1)  //highquality setting
         {
             high.enabled = true;
             low.enabled = false;
@@ -48,7 +48,7 @@ public class QualityMenuControl : MonoBehaviour {
         else
             vibration.GetComponent<Toggle>().isOn = false;
 
-        //slider
+        //sliders, sound and control.
         
         slider1.GetComponent<Slider>().value = GameController.gameController.userSettings.var1;
         audioSlider.GetComponent<Slider>().value = GameController.gameController.userSettings.soundVol;
@@ -63,7 +63,7 @@ public class QualityMenuControl : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //go back to menu
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
@@ -113,13 +113,13 @@ public class QualityMenuControl : MonoBehaviour {
 
     public void SliderChange(float val)
     {
-        //Debug.Log(val);
+        //... slider range is set in unity editor ui.
         GameController.gameController.userSettings.var1 = (int)val;
     }
 
     public void AudioSlider(float val)
     {
-        
+        //..slider range is set in unity editor ui.
         GameController.gameController.userSettings.soundVol = (int)val;
     }
 

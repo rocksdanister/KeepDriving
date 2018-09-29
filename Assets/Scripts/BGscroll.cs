@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BGscroll : MonoBehaviour {
 
-
+    // THIS IS NOT USED, CHECK BGMOVEMENT SCRIPT INSTEAD.
     public int seasonDuration;
     public GameObject[] bg;
     float scrollSpeed;
@@ -28,7 +28,7 @@ public class BGscroll : MonoBehaviour {
         */
     }
 
-    public void NextBG()
+    public void NextBG() //  not used
     {
 
         int i = 0;

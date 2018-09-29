@@ -13,6 +13,8 @@ public class EnableHighScorePanel : MonoBehaviour {
     Button btn, btn2, btn3;
     // Use this for initialization
     void Start () {
+
+        //.. there is probabily far better way to do this unlike this, I went this way.
         obj = gameObject.transform.Find("Text1").gameObject;
         text = obj.GetComponent<Text>();
         img = GetComponent<Image>();

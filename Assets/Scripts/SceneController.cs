@@ -51,17 +51,17 @@ public class SceneController : MonoBehaviour {
         co = StartCoroutine(SpawnWaves());
     }
 
-    int whatWave, prevWave, nightTime;
-    float prevXPos;
+    int whatWave, prevWave, nightTime; // whatWave =current enemy wave, nightTime = during night difficulty made easier.
+    float prevXPos;  // prev player pos.
     IEnumerator SpawnWaves()
     {
         GameObject enemy1;
-        yield return new WaitForSeconds(startWait);
+        yield return new WaitForSeconds(startWait); //wait before spawning eenmy firsttime.
         while (true)
         {
-            prevXPos = 10;  // fix
+            prevXPos = 10;  // fix, assume prev player pos.
             whatWave = Random.Range(0, enemyCars.Length - 1);  // excluding max, also length-1 since car1&2 are part of wave 0
-            if (restarted == 1)
+            if (restarted == 1) // not run firsttime, flag.
             {
                 //.. logic for enemy selection, trying not to repeat waves
                 if (whatWave == prevWave)
@@ -74,25 +74,25 @@ public class SceneController : MonoBehaviour {
             }
 
             nightTime = 0; //default,not night
-            // setting wave to 0 at nighttime, atleast trying to xD
+            // setting wave to 0 or 3 only at night.
             if (currentTimeState == 1)  //evening to night
             {
                 if (elapsedTime >= 15) // half of seasonchangerate?
                 {
-                    //Debug.Log("NOW");
                     nightTime = 1;
-                    if (Random.value <= 0.5)
+                    if (Random.value <= 0.5)  // 50% chance either
                         whatWave = 0;
                     else
                         whatWave = 3;
                 }
             }
             
-            if (gameRun == false)
+            if (gameRun == false) // score screen,gameover.
                 whatWave = 0; // display only wave 0 when gameover
+
             //.. enemy selection end
 
-            // wave delay control
+            // different waves have different delay before spawning, based on previous wave.
             if (restarted == 1)
             {
                 if (whatWave == 2) // straight car
@@ -121,20 +121,20 @@ public class SceneController : MonoBehaviour {
             //Debug.Log("wave:"+whatWave);
             if (whatWave == 0)
             {
-                for (int i = 0; i < enemyCount; i++)   // normal enemy car
+                for (int i = 0; i < enemyCount; i++)   // normal enemy car, texture 1 & 2
                 {
                     Vector3 spawnPosition;
-                    enemy1 = enemyCars[UnityEngine.Random.Range(0, 2)];
+                    enemy1 = enemyCars[UnityEngine.Random.Range(0, 2)]; //selecting either texture
                     if (UnityEngine.Random.value >= 0.4f)  // 60% chance for random
-                        spawnPosition = new Vector3(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                        spawnPosition = new Vector3(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z); // spawns in a certain range, if spawned outside road, the colliders on grass will detect it and destroy it. Not elegant, there are better ways to do this like spawning on player-pos+offset.
                     else
                         spawnPosition = new Vector3(playerController.transform.position.x, spawnValues.y, spawnValues.z);
-                    Quaternion spawnRotation = Quaternion.Euler(0f, 0f, 180f);
+                    Quaternion spawnRotation = Quaternion.Euler(0f, 0f, 180f); // car facing opposite direction.
                     Instantiate(enemy1, spawnPosition, spawnRotation);
                     if(nightTime==0)
                         yield return new WaitForSeconds(spawnWait);
                     else if(nightTime==1)
-                        yield return new WaitForSeconds(spawnWait+0.2f); //nighttime easier
+                        yield return new WaitForSeconds(spawnWait+0.2f); //nighttime easier,greater delay between spawns.
                 }
                // yield return new WaitForSeconds(waveWait);
             }
@@ -144,7 +144,7 @@ public class SceneController : MonoBehaviour {
                 {
                     enemy1 = enemyCars[3];
                     //  Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                    Vector3 spawnPosition = new Vector3(playerController.transform.position.x, spawnValues.y, spawnValues.z);
+                    Vector3 spawnPosition = new Vector3(playerController.transform.position.x, spawnValues.y, spawnValues.z); //playerpos , then go left or right based on the script attached to the enemy.
                     Quaternion spawnRotation = Quaternion.Euler(0f, 0f, 180f);
                     Instantiate(enemy1, spawnPosition, spawnRotation);
                     yield return new WaitForSeconds(spawnWait3);
@@ -153,14 +153,13 @@ public class SceneController : MonoBehaviour {
             }
             else if (whatWave == 2)
             {
-                for (int i = 0; i < enemyCount2; i++)  // straight
+                for (int i = 0; i < enemyCount2; i++)  // straight, spawns based on player pos.
                 {
                     enemy1 = enemyCars[2];
 
-                    if (Mathf.Abs(prevXPos - playerController.transform.position.x) < 0.3f)
+                    if (Mathf.Abs(prevXPos - playerController.transform.position.x) < 0.3f) // stop from consequentively spawning after each other.
                     {
                         // i--;
-                        //Debug.Log("NOP");
                     }
                     else
                     {
@@ -195,9 +194,9 @@ public class SceneController : MonoBehaviour {
 
     void DayNightCycle()
     {
-        //Debug.Log(elapsedTime);
-
-        if (elapsedTime > secondsInFullDay)
+        // Time System cycle, Morning - Day - Evening -Night -Morning ..
+        // SecondsInFullDay = full cycle duration, RateAtColorChange = cycle transition duration
+        if (elapsedTime > secondsInFullDay) 
         {
            // Debug.Log("cycle change");
             elapsedTime = 0;  // dont forget to reset it to 0 when lvl restarts
@@ -208,7 +207,7 @@ public class SceneController : MonoBehaviour {
         }
         if (currentTimeState == 0)  // day - evening
         {
-            ambientLight.color = Color.Lerp(cycle[0], cycle[1], elapsedTime / rateAtColorChange);
+            ambientLight.color = Color.Lerp(cycle[0], cycle[1], elapsedTime / rateAtColorChange); //smoothly transition light using lerp.
         }
         else if (currentTimeState == 1)
         {
@@ -240,7 +239,7 @@ public class SceneController : MonoBehaviour {
 
     void CommunicateWithController()
     {
-
+        //not used currently.
     }
 
     // Use this for initialization
@@ -254,13 +253,14 @@ public class SceneController : MonoBehaviour {
 
     public void RestartScene()
     {
-        SoundManager.soundManager.StopPlaying();
+        SoundManager.soundManager.StopPlaying(); //since its singleton, its not deleted on scene reload.
        // SoundManager.soundManager.StartPlaying(0); // Start is calling it already
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); //restart.
     }
 
     public void ChangeGameRun(int i)
     {
+        //.. setting state to game end score screen.
         if (i == 0)
         {
             player.SetActive(false);
@@ -301,7 +301,7 @@ public class SceneController : MonoBehaviour {
 	void Update () {
         if(gameRun==true)
             elapsedTime0 += Time.deltaTime; //score
-        //... Day/night cycle
+        //... Day/night cycle time.
         elapsedTime += Time.deltaTime;
         DayNightCycle();
         MusicChanger();

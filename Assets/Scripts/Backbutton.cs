@@ -12,6 +12,7 @@ public class Backbutton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //...unnecessary to have a single script for this, oh well xD.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SoundManager.soundManager.StopPlaying();

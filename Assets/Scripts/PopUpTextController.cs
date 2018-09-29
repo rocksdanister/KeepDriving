@@ -9,14 +9,14 @@ public class PopUpTextController : MonoBehaviour {
     private  GameObject canvas;
     public int mileStone = 25;
     private int mileStoneIncr;
-    public string[] Voices;
+    public string[] Voices; // text added in unity editor ui.
 
     public SceneController sceneController;
 
     void Start()
     {
-        mileStoneIncr = mileStone;
-        canvas = GameObject.Find("Canvas");
+        mileStoneIncr = mileStone; //.. display text at what score interval.
+        canvas = GameObject.Find("Canvas"); // where to spawn.
     }
 
     public void CreateFloatingText(string text)

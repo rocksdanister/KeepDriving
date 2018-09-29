@@ -25,7 +25,7 @@ public class SoundManager : MonoBehaviour {
 
     void Awake()  
     {
-        //.. Singleton design, only one isntance.
+        //.. Singleton design, only one isntance; Doing this eliminates loading time the 2nd run from menu screen since sound assets already loaded.
         if (soundManager == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -65,7 +65,7 @@ public class SoundManager : MonoBehaviour {
     
     public void StartPlaying(int track)
     {
-        if(GameController.gameController.userSettings.soundVol != 100)
+        if(GameController.gameController.userSettings.soundVol != 100) // 100-0 , 200- 100vol lvl xD
             co = StartCoroutine(FadeIn(track));
     }
 
@@ -78,7 +78,7 @@ public class SoundManager : MonoBehaviour {
 	void Update () {
         
     }
-
+    // music transition 
     IEnumerator FadeIn(int track)
     {
         keepFadingIn = true;

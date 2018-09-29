@@ -25,7 +25,7 @@ public class EnemyScript : MonoBehaviour
 
 
     int flag = 0;
-    public void ResetVelocity()
+    public void ResetVelocity() // stop moving if road infront.
     {
         
         if(flag==0)

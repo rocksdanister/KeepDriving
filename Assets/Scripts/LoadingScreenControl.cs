@@ -9,6 +9,7 @@ public class LoadingScreenControl : MonoBehaviour {
     public GameObject loadingObj;
     public Slider slider;
 
+    //... Loaing in the bacmkground with a loading screen.
     AsyncOperation async;
 
     // Use this for initialization
@@ -32,7 +33,7 @@ public class LoadingScreenControl : MonoBehaviour {
             slider.value = async.progress;
             if(async.progress == 0.9f)
             {
-                slider.value = 1f;
+                slider.value = 1f; // loading animation, see ui element.
                 async.allowSceneActivation = true;
             }
             yield return null;

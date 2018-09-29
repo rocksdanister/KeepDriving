@@ -25,18 +25,18 @@ public class HighScore : MonoBehaviour {
         
             GameController.gameController.Load();
             score = sceneController.elapsedTime0;
-            if (no > 9) // avg of 10 sessions?
+            if (no > 9) // avg of 10.
                 no = 0;
 
             if (Mathf.CeilToInt(score) > GameController.gameController.userSettings.highScore1)
             {
                 GameController.gameController.userSettings.highScore1 = Mathf.CeilToInt(score);
-                //avg calculation
+                //avg calculation, avg for last 10 games.
                 avg = (avg * no + GameController.gameController.userSettings.highScore1) / (no + 1);
                 no++;
                 GameController.gameController.userSettings.var2 = avg;
                 GameController.gameController.userSettings.var3 = no;
-                GameController.gameController.Save();               
+                GameController.gameController.Save();      // saving new avg.
                 text.text = "NEW HIGH SCORE: " + Mathf.CeilToInt(score) +"\n"+ "AVG SCORE: " + GameController.gameController.userSettings.var2;
             }
             else

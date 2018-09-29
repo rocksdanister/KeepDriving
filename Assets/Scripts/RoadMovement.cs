@@ -38,15 +38,15 @@ public class RoadMovement : MonoBehaviour {
         //transform.position = Vector3.SmoothDamp(transform.position, mTargetPos,ref velocity ,2.0f);
 
 
-        if (transform.position.y == 0)
+        if (transform.position.y == 0) // road reached exactly screen position, from top.
         {
             mTimer = 0.0f;
             mTargetPos = new Vector3(0, -10, 0);
             mStartingPos = transform.position;
-            trackScript.NextTrackSelect(int.Parse(gameObject.tag));
+            trackScript.NextTrackSelect(int.Parse(gameObject.tag)); // start moving nexttrack from top.
         }
 
-        if(transform.position.y == -10)
+        if(transform.position.y == -10)  // road outside screen.
         {
             mTimer = 0.0f;
             mTargetPos = new Vector3(0, -20, 0);

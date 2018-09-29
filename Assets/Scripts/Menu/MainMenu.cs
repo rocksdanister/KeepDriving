@@ -14,17 +14,17 @@ public class MainMenu : MonoBehaviour {
         {
             if (sceneIndex == 1)
             {
-                if (GameController.gameController.userSettings.firstRun == true)
+                if (GameController.gameController.userSettings.firstRun == true) // first time launch
                 {
                     SceneManager.LoadScene(3);  // tutorial/cutscene
                 }
-                else
+                else  // display loading screen/ui. 
                 {
                     loadingScr.SetActive(true);
                     loading.LoadLvlStart();
                 }
             }
-            else if (sceneIndex == -1)
+            else if (sceneIndex == -1)  // exit button
                 Application.Quit();
             else
                 UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
@@ -38,9 +38,9 @@ public class MainMenu : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 0) // menu screen
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 0) // if menu screen
             Application.Quit();
-        else if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 4) // if this scene
+        else if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 4) // if credits scene go back
             SceneManager.LoadScene(0);
     }
 

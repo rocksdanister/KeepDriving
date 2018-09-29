@@ -19,11 +19,11 @@ public class GameController : MonoBehaviour {
     public class UserSettings
     {
         public int quality;  // 0 -low, 1-high
-        public int soundVol;  // 100-0 , 200 - 1vol
+        public int soundVol;  // 100 = 0, 200 = 1vol level
         public int highScore1;
         public bool fps_on; // 0-off, 1-on
         public bool firstRun;  // to decide to show tutorial?
-        public bool vibrate;
+        public bool vibrate; //vibrate or not
         // for future use.
         public int var1;
         public int var2;
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour {
     }
     [HideInInspector]public UserSettings userSettings, loadData;
     bool gameLaunch = true;
-    public bool gameRun = false;
+    public bool gameRun = false; // variable not used currently
 
     void Awake()
     {
@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        userSettings = new UserSettings();
+        userSettings = new UserSettings(); //load default values/settings
         Load();  // load save data
         //Application.targetFrameRate = 30;
     }
@@ -98,6 +98,8 @@ public class GameController : MonoBehaviour {
                 userSettings.var2 = loadData.var2;
                 userSettings.var3 = loadData.var3;
 
+            //.... Some adjustments for existing installed users when changes where made,ignore otherwise...
+
             if (userSettings.var1 < 10)  //control sensitivity ,before update var1=0 so a fix. now var1 is from 10-100
             {
                 userSettings.var1 = 80;
@@ -107,7 +109,7 @@ public class GameController : MonoBehaviour {
             {
                 userSettings.soundVol = 200;
             }
-
+            //.... adjustments over.
         }
 
     }

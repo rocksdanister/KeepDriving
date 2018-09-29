@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioSettings : MonoBehaviour {
 
+    //...not used.
+
     AudioSource src;
 	// Use this for initialization
 	void Start () {

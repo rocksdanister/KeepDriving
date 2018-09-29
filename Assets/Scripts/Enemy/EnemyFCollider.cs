@@ -14,9 +14,9 @@ public class EnemyFCollider : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D other)
     {
 
-            if (other.tag == "rgrass" || other.tag == "lgrass" || other.tag == "enemy")
+            if (other.tag == "rgrass" || other.tag == "lgrass" || other.tag == "enemy") // left grass, right grass or other enemy.
             {
-                parentScript.ResetVelocity();
+                parentScript.ResetVelocity(); // Stop the enemy movement.
             }
 
     }

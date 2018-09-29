@@ -32,18 +32,18 @@ public class BGMovement : MonoBehaviour {
     void Update()
     {
         mTimer += Time.deltaTime;
-        transform.position = Vector3.Lerp(mStartingPos, mTargetPos, mTimer / mTravelTime);
+        transform.position = Vector3.Lerp(mStartingPos, mTargetPos, mTimer / mTravelTime); // smooth lerp motion for background.
         //transform.position = Vector3.SmoothDamp(mStartingPos, mTargetPos, ref velocity, 2);
-        if (transform.position.y == 0)
+        if (transform.position.y == 0) // background exactly reached the screen from top.
         {
             mTimer = 0.0f;
             mTargetPos = new Vector3(0, -10, 0);
             mStartingPos = transform.position;
             //  TrackScript.trackScript.NextTrackSelect(int.Parse(gameObject.tag));
-            bgScroll.NextBG();
+            bgScroll.NextBG(); // start moving the next bg from top.
         }
 
-        if (transform.position.y == -10)
+        if (transform.position.y == -10) //outside screen, restart position of bg.
         {
             mTimer = 0.0f;
             mTargetPos = new Vector3(0, -20, 0);

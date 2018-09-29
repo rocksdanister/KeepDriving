@@ -15,8 +15,9 @@ public class EnemyFCollider2 : MonoBehaviour {
 
         if (other.tag == "rgrass" || other.tag == "lgrass" || other.tag == "enemy")
         {
-            if(other.tag == "rgrass")
-                parentScript.ResetVelocity(1);
+            // turn left or  right whether leftgrass or rgrass.
+            if (other.tag == "rgrass")
+                parentScript.ResetVelocity(1); 
             else if(other.tag == "lgrass")
                 parentScript.ResetVelocity(0);
         }
