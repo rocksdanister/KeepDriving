@@ -25,7 +25,7 @@ public class SoundManager : MonoBehaviour {
 
     void Awake()  
     {
-        //.. Singleton design, only one isntance; Doing this eliminates loading time the 2nd run from menu screen since sound assets already loaded.
+        //.. Singleton design, only one instance; Doing this eliminates loading time the 2nd run from menu screen since sound assets already loaded.
         if (soundManager == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -65,7 +65,7 @@ public class SoundManager : MonoBehaviour {
     
     public void StartPlaying(int track)
     {
-        if(GameController.gameController.userSettings.soundVol != 100) // 100-0 , 200- 100vol lvl xD
+        if(GameController.gameController.userSettings.soundVol != 100) // 100-0 , 200- 100vol level..
             co = StartCoroutine(FadeIn(track));
     }
 
@@ -91,7 +91,7 @@ public class SoundManager : MonoBehaviour {
         audioSource.Play();
 
         float audioVolume = trackVolume;
-        maxVolume = (float)(GameController.gameController.userSettings.soundVol - 100)/100f; // slider volume 100-200
+        maxVolume = (float)(GameController.gameController.userSettings.soundVol - 100)/100f; // slider volume  range: 100-200 
 
         while(trackVolume < maxVolume && keepFadingIn)
         {

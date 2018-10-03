@@ -11,9 +11,6 @@ public class GameController : MonoBehaviour {
 
     public static GameController gameController;
 
-   // public int[] scores  = new int[5];
-
-
     //... Benchmarking & Save Data Variables
     [Serializable]
     public class UserSettings
@@ -70,7 +67,7 @@ public class GameController : MonoBehaviour {
 
     public void Save()
     {
-        //.. using binary for safety, so that user cant modify (well amateurs anyway xD )
+        //.. using binary for safety, so that player can't modify easily.
         BinaryFormatter bf = new BinaryFormatter();
 
         // .. in windows this path is under user/appdata/LocalLow/...
@@ -98,7 +95,7 @@ public class GameController : MonoBehaviour {
                 userSettings.var2 = loadData.var2;
                 userSettings.var3 = loadData.var3;
 
-            //.... Some adjustments for existing installed users when changes where made,ignore otherwise...
+            //.... Some adjustments for existing playstore installed users when changes where made,remove otherwise.
 
             if (userSettings.var1 < 10)  //control sensitivity ,before update var1=0 so a fix. now var1 is from 10-100
             {

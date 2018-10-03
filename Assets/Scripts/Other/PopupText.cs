@@ -10,7 +10,6 @@ public class PopupText : MonoBehaviour {
 	
 	void Start () {
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
-        // text1 = animator.GetComponent<Text>();
         Destroy(gameObject, clipInfo[0].clip.length);
 	}
 	

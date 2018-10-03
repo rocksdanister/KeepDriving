@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TrackCollider : MonoBehaviour
 {
-    
 
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "player" || other.tag == "enemy")
         {
-            // Debug.Log("enter" + other.tag);
+
             if (other.tag == "enemy")
             {
              //   Debug.Log(other.transform.position.y);
@@ -19,7 +19,9 @@ public class TrackCollider : MonoBehaviour
             }
         }
     }
+    */
 
+    // .. destroy enemy cars entering track (Outside the view scene).
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "player" || other.tag == "enemy")

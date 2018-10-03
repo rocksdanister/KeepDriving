@@ -16,7 +16,7 @@ public class TrackScript : MonoBehaviour {
     //.. Road Speed/time
     public float mTravelTime;
 
-    //.. Track Data such as sequence order etc
+    //.. Track Data such as sequence order etc, currently not used.
     [Serializable]
     public class Track
     {
@@ -33,7 +33,6 @@ public class TrackScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-     //   if(GameController.gameController.gameRun == true)
             InitialSetup();
     }
 

@@ -7,11 +7,12 @@ public class GraphicsReminder : MonoBehaviour {
 
     int flag = 0;
     Text text;
-    public string[] gpuNames;
+    public string[] gpuNames;  // tested gpu names, add entry in Unity Editor.
     // Use this for initialization
     void Start () {
         text = GetComponent<Text>();
         
+        //.. Initially I made a benchmark script to test performance, decided to scrap that & just use tested gpu list.
         foreach(string str in gpuNames)
         {
             if (SystemInfo.graphicsDeviceName == str)

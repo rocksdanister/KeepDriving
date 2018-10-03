@@ -6,17 +6,14 @@ public class EnemyScript : MonoBehaviour
 {
 
     public float speed;
-    //public float maxSpeed;
-   // public float minSpeed;
-    //public float tSpeed; //turning speed
     Rigidbody2D rb;
-    Vector2 tmp;// = new Vector2(0.0f, -1 * speed);
+    Vector2 tmp;
 
 
     // Use this for initialization
     void Start()
     {        
-      //  maxSpeed = Random.Range(minSpeed, maxSpeed);
+      //  maxSpeed = Random.Range(minSpeed, maxSpeed); // decided constant speed instead.
         rb = GetComponent<Rigidbody2D>();
         tmp = new Vector2(0.0f, -1 * speed);
         rb.velocity = tmp;
@@ -34,11 +31,5 @@ public class EnemyScript : MonoBehaviour
        
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-
-        // Debug.Log(transform.position.y);
-    }
 
 }

@@ -44,10 +44,5 @@ public class EnemyScriptTurn : MonoBehaviour {
        // currTurn = -1 * currTurn;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-        // Debug.Log(transform.position.y);
-    }
 }
